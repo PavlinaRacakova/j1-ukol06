@@ -11,7 +11,9 @@ import java.awt.event.ActionEvent;
 public class Aplikace extends JFrame {
 
     private JSpinner geeseSpinner;
+    SpinnerNumberModel geeseSpinnerNumberModel;
     private JSpinner rabbitsSpinner;
+    SpinnerNumberModel rabbitsSpinnerNumberModel;
     private JTextField legsField;
     private JTextField headsField;
     private JLabel geeseLabel;
@@ -50,7 +52,7 @@ public class Aplikace extends JFrame {
         setMinimumSize(new Dimension(250, 200));
 
         //Geese spinner
-        SpinnerNumberModel geeseSpinnerNumberModel = new SpinnerNumberModel(0, 0, 10000, 5);
+        geeseSpinnerNumberModel = new SpinnerNumberModel(0, 0, 10000, 5);
         geeseSpinner = new JSpinner(geeseSpinnerNumberModel);
         geeseLabel = new JLabel("Geese ");
         geeseLabel.setLabelFor(geeseSpinner);
@@ -58,7 +60,7 @@ public class Aplikace extends JFrame {
         add(geeseSpinner);
 
         //Rabbits spinner
-        SpinnerNumberModel rabbitsSpinnerNumberModel = new SpinnerNumberModel(0, 0, 10000, 5);
+        rabbitsSpinnerNumberModel = new SpinnerNumberModel(0, 0, 10000, 5);
         rabbitsSpinner = new JSpinner(rabbitsSpinnerNumberModel);
         rabbitsLabel = new JLabel("Rabbits ");
         rabbitsLabel.setLabelFor(rabbitsSpinner);
@@ -96,16 +98,17 @@ public class Aplikace extends JFrame {
 
     /**
      * When the calculate button is invoked, this method counts how many heads and legs are presented and sets the results to relevant fields
+     *
      * @param actionEvent
      */
     private void handleCalculate(ActionEvent actionEvent) {
-         int numberOfGeese = (Integer) geeseSpinner.getValue();
-         int numberOfRabbits = (Integer) rabbitsSpinner.getValue();
+        int numberOfGeese = (Integer) geeseSpinner.getValue();
+        int numberOfRabbits = (Integer) rabbitsSpinner.getValue();
 
-         int numberOfHeads = numberOfGeese + numberOfRabbits;
-         int numberOfLegs = (numberOfGeese * 2) + (numberOfRabbits * 4);
+        int numberOfHeads = numberOfGeese + numberOfRabbits;
+        int numberOfLegs = (numberOfGeese * 2) + (numberOfRabbits * 4);
 
-         headsField.setText(Integer.toString(numberOfHeads));
-         legsField.setText(Integer.toString(numberOfLegs));
+        headsField.setText(Integer.toString(numberOfHeads));
+        legsField.setText(Integer.toString(numberOfLegs));
     }
 }
