@@ -11,9 +11,9 @@ import java.awt.event.ActionEvent;
 public class Aplikace extends JFrame {
 
     private JSpinner geeseSpinner;
-    SpinnerNumberModel geeseSpinnerNumberModel;
+    private SpinnerNumberModel geeseSpinnerNumberModel;
     private JSpinner rabbitsSpinner;
-    SpinnerNumberModel rabbitsSpinnerNumberModel;
+    private SpinnerNumberModel rabbitsSpinnerNumberModel;
     private JTextField legsField;
     private JTextField headsField;
     private JLabel geeseLabel;
@@ -29,7 +29,6 @@ public class Aplikace extends JFrame {
 
     /**
      * Constructor
-     *
      * @throws HeadlessException
      */
     public Aplikace() throws HeadlessException {
@@ -43,7 +42,7 @@ public class Aplikace extends JFrame {
     }
 
     /**
-     * Initialization code
+     * Main initialization code
      */
     private void init() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
